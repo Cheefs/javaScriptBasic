@@ -26,7 +26,7 @@
 
     // Ответ 5, так как у скобок самый высокий приоритет, сперва переменной "a" присваниваем значение самой себя умноженой на 2 ( a = a * 2, получим 4 ) 
     // далее, выполняем сложение 4 + 1 и получаем 5 
-
+    
 main();
 
 function main(){
@@ -90,22 +90,22 @@ function task3(){
 function task4(){
     var a = prompt('Введите число в промежутке от 0 до 15');
     switch( parseInt(a)) {
-        case 0: alert (0);
-        case 1: alert (1);
-        case 2: alert (2);
-        case 3: alert (3);
-        case 4: alert (4);
-        case 5: alert (5);
-        case 6: alert (6);
-        case 7: alert (7);
-        case 8: alert (8);
-        case 9: alert (9);
-        case 10: alert (10);
-        case 11: alert (11);
-        case 12: alert (12);
-        case 13: alert (13);
-        case 14: alert (14);
-        case 15: alert (15);
+        case 0: alert(0);
+        case 1: alert(1);
+        case 2: alert(2);
+        case 3: alert(3);
+        case 4: alert(4);
+        case 5: alert(5);
+        case 6: alert(6);
+        case 7: alert(7);
+        case 8: alert(8);
+        case 9: alert(9);
+        case 10: alert(10);
+        case 11: alert(11);
+        case 12: alert(12);
+        case 13: alert(13);
+        case 14: alert(14);
+        case 15: alert(15);
             break;
         default: alert ('Введенное вами число не входит в требуемый диапазон значений!');
             break;
