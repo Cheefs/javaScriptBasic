@@ -174,7 +174,6 @@ function task8(){
 
 function power(val, pow){
     if (pow != 1){
-        console.log(val);
         return val * power(val, pow - 1);
     }else{
         return val;
