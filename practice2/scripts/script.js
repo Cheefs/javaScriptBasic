@@ -46,8 +46,11 @@ function main(){
             var arg2 = prompt('Введите число 2');
             if ( !isNaN(arg1) && !isNaN(arg2)){
                 var operation = prompt('Введите:\n "сумма" - для сложения;\n "разность" - для вычитания;\n "умножение" - для умножения;\n "деление" - для разделения');
+                mathOperation(arg1, arg2, operation);
+            }else{
+                alert('Вы ввели не число');
             }
-            mathOperation(arg1, arg2, operation);
+           
             break;
         case 4: task8();
             break;
@@ -107,7 +110,7 @@ function task4(){
         case 14: alert(14);
         case 15: alert(15);
             break;
-        default: alert ('Введенное вами число не входит в требуемый диапазон значений!');
+        default: alert('Введенное вами число не входит в требуемый диапазон значений!');
             break;
     }
 }
@@ -129,7 +132,6 @@ function division(a, b){
 // 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 — значения аргументов, operation — строка с названием операции.
     // В зависимости от переданного значения выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (применить switch).
 function mathOperation(arg1, arg2, operation) {
-    var result = 'Вы ввели не число';
     switch(  operation.toLocaleLowerCase() ){
         case 'сумма': 
             result = summ(arg1, arg2);
