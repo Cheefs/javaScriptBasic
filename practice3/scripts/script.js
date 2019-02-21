@@ -6,7 +6,6 @@ function main(){
     +'\n 2 - Подсчет стоимости корзины \n 3 - *Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла' 
     + '\n 4 - Нарисовать пирамиду с помощью console.log');
     if(!isNaN(choise)){
-        console.log(+choise)
         switch (+choise) {
             case 1: 
                 simpleNumber();
@@ -26,7 +25,7 @@ function main(){
                 break;
         }
     }else{
-        alert('Вы ввели не число! Попробуйте еще раз')
+        alert('Вы ввели не число! Попробуйте еще раз');
         main();
     }
 }
@@ -68,7 +67,7 @@ function countBasketPrice( goods ){
     var totalPrice = 0;
     for(var i = 0; i < goods.length; i++){
         for( var j = 0; j < goods[i][2]; j++ ) {
-            totalPrice += goods[i][1]
+            totalPrice += goods[i][1];
         }
     }
     alert('Стоимость товаров корзины составляет: '+ totalPrice);
@@ -78,7 +77,7 @@ function countBasketPrice( goods ){
 // 3.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
 //     for(…){// здесь пусто}
 function numbers(){
-    var i = 0
+    var i = 0;
     for(;;){
         if(i > 9){
             break;
@@ -98,7 +97,8 @@ function writePiramid(){
     var str ='';
        
     while(count !== 20 ) {
-        str += "*";console.log(str);   
+        str += "*";
+        console.log(str);   
         count++;
     }
 }
