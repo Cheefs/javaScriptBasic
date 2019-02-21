@@ -97,7 +97,7 @@ function writePiramid(){
     var str ='';
        
     while(count !== 20 ) {
-        str += "*";
+        str += '*';
         console.log(str);   
         count++;
     }
