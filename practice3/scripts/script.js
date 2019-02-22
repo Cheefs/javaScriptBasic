@@ -36,6 +36,10 @@ function main(){
 // 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
 function simpleNumber() {
     var str ='';
+    alert(collectSimpleNumbers(str));
+}
+
+function collectSimpleNumbers(str){
     var i = 0;
     while(i < 100){
         if (i > 1 && checkNumber(i)){
@@ -43,21 +47,28 @@ function simpleNumber() {
         }
         i++;
     }
-    alert(str);
+    return str;
 }
 
 // функция проверки простоты числа
 function checkNumber(number){
-    var flag = true;
-    var j = 2;
-    while(j < number){
-        if( number % j === 0) {
-            flag = false;  
-            break;
+   var j = 2;
+   if(number > 1){
+        while( j < number){
+            if( !divide(number, j) ){
+                return false;
+            }
+            j++;
         }
-        j++;
+   }
+    return true;
+}
+
+function divide(number, divader){
+    if( number % divader === 0) {
+        return false;  
     }
-    return flag;
+    return true;
 }
 
 /*2. С этого урока начинаем работать с функционалом интернет-магазина. 
@@ -81,12 +92,8 @@ function countBasketPrice( goods ){
 //     for(…){// здесь пусто}
 function numbers(){
     var i = 0;
-    for(;;){
-        if(i > 9){
-            break;
-        } 
-        alert(i);
-        i++;
+    for(var i = 0; i < 10; alert(i++)) {
+
     }
 }
 // 4. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
