@@ -6,7 +6,7 @@ function main(){
     if(!isNaN(choise) && choise > 0 && choise < 3) {
         if(+choise === 1){
             numberAsObjeсt();
-        }else if(+choise === 2){
+        } else if(+choise === 2) {
             basket();
         }
     } else {
