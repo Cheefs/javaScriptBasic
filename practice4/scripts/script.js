@@ -5,7 +5,7 @@ function main(){
     var choise = prompt('1 - для проверки роботы задачи №1(число от 0 до 999) \n2 - Для проверки задачи №2 (подсчет стоимости корзины) \n0 - для выхода');
     if(!isNaN(choise) && choise > 0 && choise < 3) {
         if(+choise === 1){
-            numberAsObjekt();
+            numberAsObjeсt();
         }else if(+choise === 2){
             basket();
         }
