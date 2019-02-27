@@ -9,7 +9,7 @@ function main(){
         }else if(+choise === 2){
             basket();
         }
-    }else {
+    } else {
         if(+choise !== 0 ){
             alert('Вы ввели неверное значение!');
             main();
