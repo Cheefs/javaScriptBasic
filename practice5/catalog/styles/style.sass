@@ -1,0 +1,62 @@
+.container
+  padding: 15px 10px
+  width: 1050px
+  box-shadow: 2px 2px 2px 2px #ddd
+  margin: 0 auto
+  display: flex
+  flex-wrap: wrap
+
+  .product
+    margin: 20px 10px 0 5px
+    padding: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: 300px
+    background-color: #e6e7eb
+    transition: 0.5s
+    &:hover
+      transform: scale(1.1)
+      filter: invert(5%)
+    &:nth-child(-n+4)
+      margin-top: 0
+    &:nth-child(4n)
+      margin-right: 0
+    .product__photo
+      background-color: white
+      width: 230px
+      height: 220px
+      transition: 0.5s
+      .photo
+        text-transform: uppercase
+        text-align: center
+        font-size: 60px
+        height: 100%
+        transform: rotate(-35deg) translate(0, 60px)
+    .product__desc
+      font-weight: bold
+      padding: 10px
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      background-color: white
+      width: 210px
+      height: 50px
+      transition: 0.5s
+      .product_name
+        text-transform: uppercase
+        text-decoration: underline
+        margin-bottom: 10px
+      .product_price
+        font-weight: bold
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        width: 100%
+        .text
+          text-transform: uppercase
+        .price
+          font-style: italic
+          color: #fc0056

@@ -1,0 +1,35 @@
+.chess-board
+  width: 900px
+  margin: 0 auto
+  .board-center
+    float: left
+    .board-row
+      display: flex
+      flex-direction: row
+      .board-coll
+        width: 100px
+        height: 100px
+        &.coll_black
+          background-color: black
+
+.board-border
+  height: 50px
+  background-color: #4e2f0b
+  width: 100%
+  display: flex
+  justify-content: space-around
+  align-items: center
+  font-size: 26px
+  font-weight: bold
+  color: wheat
+  &.border_top
+    transform: rotate(180deg)
+  &.border-right
+    height: 800px
+    float: left
+    width: 50px
+    flex-direction: column
+  &.border-left
+    @extend .border-right
+    float: right
+    transform: rotate(180deg)
