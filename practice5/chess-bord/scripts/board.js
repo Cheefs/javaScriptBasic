@@ -29,12 +29,15 @@ $boadrd.classList.add('chess-board');
     }
 
 function fillBoardBorder($element){
-    var chars = ['A','B','C','D','E','F','G','H'];
-    for (var i = 0; i < MAX_LENGTH ; i++) {
+    // var chars = ['A','B','C','D','E','F','G','H'];
+    var chars = 'ABCDEFGHJKLMOPQRSTUVWXYZ';
+    for (var i = 0; i < MAX_LENGTH; i++) {
         var $coll = document.createElement('div');
         if ( $element.classList.contains('border_top')) {
             $coll.classList.add('board-coll');
-            $coll.textContent = chars[(chars.length - 1) - i];
+
+            $coll.textContent = chars[(MAX_LENGTH - 1) - i];
+            // $coll.textContent = chars[(chars.length - 1) - i];
         } else if ($element.classList.contains('border-right')) {
             $coll.classList.add('board-coll');
             $coll.textContent = MAX_LENGTH - i;
