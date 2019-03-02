@@ -6,6 +6,10 @@
     .board-row
       display: flex
       flex-direction: row
+      &:nth-child(even) .board-coll:nth-child(odd)
+        background-color: black
+      &:nth-child(odd) .board-coll:nth-child(even)
+        background-color: black
       .board-coll
         width: 100px
         height: 100px
@@ -33,3 +37,4 @@
     @extend .border-right
     float: right
     transform: rotate(180deg)
+

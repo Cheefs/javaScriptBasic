@@ -29,46 +29,30 @@ $boadrd.classList.add('chess-board');
     }
 
 function fillBoardBorder($element){
-    // var chars = ['A','B','C','D','E','F','G','H'];
-    var chars = 'ABCDEFGHJKLMOPQRSTUVWXYZ';
     for (var i = 0; i < MAX_LENGTH; i++) {
         var $coll = document.createElement('div');
+            $coll.classList.add('board-coll');
         if ( $element.classList.contains('border_top')) {
-            $coll.classList.add('board-coll');
-
-            $coll.textContent = chars[(MAX_LENGTH - 1) - i];
-            // $coll.textContent = chars[(chars.length - 1) - i];
+            $coll.textContent = String.fromCharCode((65 + ( MAX_LENGTH - 1) ) - i );
         } else if ($element.classList.contains('border-right')) {
-            $coll.classList.add('board-coll');
             $coll.textContent = MAX_LENGTH - i;
         } else if ($element.classList.contains('board-center')) {
             $coll.classList.add('board-row');
-            $coll = boardCenter($coll, i);
+            $coll = boardCenter($coll);
         } else if ($element.classList.contains('border-left')) {
-            $coll.classList.add('board-coll');
             $coll.textContent = (i + 1);
         } else {
-            $coll.classList.add('board-coll');
-            $coll.textContent = chars[i];
+            $coll.textContent = String.fromCharCode(65 + i) ;
         }
         $element.appendChild($coll);
     }
     return $element;
 }
 
-function boardCenter($element, count) {
+function boardCenter($element) {
     for (var j = 0; j < MAX_LENGTH; j++) {
         var $coll = document.createElement('div');
         $coll.classList.add('board-coll');
-        if ( count % 2 === 0) {
-            if ( j % 2 !== 0 ) {
-                $coll.classList.add('coll_black');
-            }
-        } else {
-            if ( j % 2 === 0 ) {
-                $coll.classList.add('coll_black');
-            }
-        }
         $element.appendChild($coll);
     }
     return $element;

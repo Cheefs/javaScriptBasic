@@ -6,6 +6,10 @@
     .chess-board .board-center .board-row {
       display: flex;
       flex-direction: row; }
+      .chess-board .board-center .board-row:nth-child(even) .board-coll:nth-child(odd) {
+        background-color: black; }
+      .chess-board .board-center .board-row:nth-child(odd) .board-coll:nth-child(even) {
+        background-color: black; }
       .chess-board .board-center .board-row .board-coll {
         width: 100px;
         height: 100px; }
