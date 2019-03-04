@@ -10,10 +10,11 @@ var activeIndex;
 function handlerPhotoClick(e) {
     activeIndex = 0;
     if (e.target.classList.contains('photo__img')) {
+        var $photos = e.target.parentElement.children[1].cloneNode(true);
+        
         $modaldoalog.classList.toggle('hide');
         $modal.children[1].setAttribute('src', e.target.src );
-        var $photos = e.target.parentElement.children[1].cloneNode(true);
-        $modal.appendChild($photos)
+        $modal.appendChild($photos);
     }
 }
 
@@ -26,7 +27,7 @@ function handlerModalClick(e) {
             $modaldoalog.classList.toggle('hide');
     } else if (e.target.classList.contains('arrow')) {
         if (e.target.classList.contains('arrow-right')) {
-            if (activeIndex < $list[0].children.length - 1  ) {
+            if (activeIndex < $list[0].children.length - 1) {
                 activeIndex++;
             } else {
                 activeIndex = 0;

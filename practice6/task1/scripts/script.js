@@ -7,7 +7,7 @@ var inCartProductsLists = [];
 var $catalog = document.getElementById('catalog');
 $catalog.addEventListener('click', handlerBuyClick);
 var $cartItems = document.getElementById('cart-items');
-$cartItems.addEventListener('click', handlerCountClick )
+$cartItems.addEventListener('click', handlerCountClick);
 
 var $priceBlock = document.getElementById('cart-price');
 $priceBlock.textContent = 'Корзина пуста';
@@ -23,7 +23,7 @@ function handlerBuyClick(e) {
             // проверим не существует ли элемента с таким же id
             if ($productFieldsList[i].classList.contains('product__photo') || $productFieldsList[i].classList.contains('product__desc')) {
                 for (var j = 0; j < inCartProductsLists.length; j++) {
-                    if (inCartProductsLists[j].id === +$product.getAttribute('data-id') ) {
+                    if (inCartProductsLists[j].id === +$product.getAttribute('data-id')) {
                         inCartProductsLists[j].total = inCartProductsLists[j].total + 1;
                         exists = true;
                         break;
@@ -32,9 +32,9 @@ function handlerBuyClick(e) {
                 if (!exists) {
                     var $elements = $productFieldsList[i].children;
                     for (var k = 0; k < $elements.length; k++) {
-                        if ( $elements[k].classList.contains('product_price') ) {
+                        if ($elements[k].classList.contains('product_price')) {
                             productObj.price = $elements[k].children[1].textContent;
-                        } else if ($elements[k].classList.contains('photo') ) {
+                        } else if ($elements[k].classList.contains('photo')) {
                             productObj.photo = $elements[k].textContent;
                         } else {
                             productObj.name = $elements[k].textContent;
@@ -47,7 +47,7 @@ function handlerBuyClick(e) {
                 }
             }
         }
-        if ( Object.keys(productObj).length !== 0 ) {
+        if (Object.keys(productObj).length !== 0) {
             inCartProductsLists.push(productObj);
         }
         reloadCart($cartItems);
@@ -69,13 +69,13 @@ function handlerCountClick(e) {
 }
 
 function changeCartItemsValue(items, id , mode) {
-    for (var i = 0; i < items.length; i++ ) {
-        if ( items[i].id === +id ){
-            if ( mode === ADD ) {
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].id === +id) {
+            if (mode === ADD) {
                 console.log(i);
                 items[i].total++;
-            } else if ( mode === REMOVE ) {
-                if ( items[i].total > 1) {
+            } else if (mode === REMOVE) {
+                if (items[i].total > 1) {
                     inCartProductsLists[i].total--;
                 }
             } else {
@@ -93,7 +93,7 @@ function reloadCart($cart) {
 }
 
 function addProductsToCart($container) {
-    for (var i = 0; i < inCartProductsLists.length; i++ ) {
+    for (var i = 0; i < inCartProductsLists.length; i++) {
         $container.appendChild( fillCart(inCartProductsLists[i]));
     }
     return $container;
