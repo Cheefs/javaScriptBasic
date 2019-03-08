@@ -14,7 +14,6 @@ $priceBlock.textContent = 'Корзина пуста';
 
 function handlerBuyClick(e) {
    var productObj = {};
-   var exists = false;
     if (e.target.classList.contains('product__button') && e.target.parentElement.classList.contains('product')) {
         var $product = e.target.parentElement;
         var $productFieldsList = e.target.parentElement.children;
@@ -22,14 +21,7 @@ function handlerBuyClick(e) {
         for (var i = 0; i < $productFieldsList.length; i++) {
             // проверим не существует ли элемента с таким же id
             if ($productFieldsList[i].classList.contains('product__photo') || $productFieldsList[i].classList.contains('product__desc')) {
-                for (var j = 0; j < inCartProductsLists.length; j++) {
-                    if (inCartProductsLists[j].id === +$product.getAttribute('data-id')) {
-                        inCartProductsLists[j].total = inCartProductsLists[j].total + 1;
-                        exists = true;
-                        break;
-                    }
-                }
-                if (!exists) {
+                if (!isExistsProduct($product)) {
                     var $elements = $productFieldsList[i].children;
                     for (var k = 0; k < $elements.length; k++) {
                         if ($elements[k].classList.contains('product_price')) {
@@ -52,6 +44,18 @@ function handlerBuyClick(e) {
         }
         reloadCart($cartItems);
     }
+}
+
+function isExistsProduct($product) {
+    for (var j = 0; j < inCartProductsLists.length; j++) {
+        if (inCartProductsLists[j].id === +$product.getAttribute('data-id')) {
+            inCartProductsLists[j].total = inCartProductsLists[j].total + 1;
+            return true;
+            // break;
+        }
+    }
+
+    return false
 }
 
 function handlerCountClick(e) {

@@ -56,7 +56,7 @@ var $container = document.createElement('div');
     $catalog.appendChild($container);
 
 
-function createProcuct(num) {
+function createProduct(num) {
     var $product = document.createElement('div');
         $product.classList.add('product');
         $product.setAttribute('data-id', num);
@@ -121,4 +121,3 @@ function createProductPrice() {
 
     return $priceBlock
 }
-
