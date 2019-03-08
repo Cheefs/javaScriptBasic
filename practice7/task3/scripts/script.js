@@ -98,10 +98,8 @@ function gameOver() {
     document.getElementById('btn-start').classList.remove('disabled');
 }
 
-
 function removeFromField() {
     var $list = document.getElementsByClassName('game-table-cell');
-    console.log($list);
     for (var i = 0; i < $list.length; i++) {
         if ($list[i].classList.contains('food-unit')) {
             $list[i].classList.remove('food-unit');
