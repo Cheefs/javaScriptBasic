@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CART</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="cartProductTemplate" style="display:none;">
+        <div class="in-cart-product">
+            <div class="product__photo"></div>
+            <div class="product__desc">
+                <div class="product_name"></div>
+                <div class="product_price"></div>
+            </div>
+            <div class="product_count">
+                <span class="count"></span>
+                <div class="btn btn_delete">&times;</div>
+                <div class="btn btn_more"></div>
+                <div class="btn btn_less"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="accordion">
+        <div id="cartItems" class="accordion__item">
+            <h3 class="item__h3" data-id="0">Состав корзины</h3>
+            <div class="main-container">
+                <div id="cart" class="cart">
+                    <div id="cart-items" class="cart-items"></div>
+                    <div id="cart-price" class="cart-price"></div>
+                </div>
+            </div>
+        </div>
+        <div id="delivery" class="accordion__item">
+            <h3 class="item__h3" data-id="1">Адрес доставки</h3>
+            <div class="main-container">
+                <div class="delivery__container">
+                    <label for="selectTown">Выберите город</label>
+                    <select name="select-town" id="selectTown" class="select-town">
+                        <option value="0"></option>
+                        <option value="1">Town 1</option>
+                        <option value="2">Town 2</option>
+                        <option value="3">Town 3</option>
+                    </select>
+                    <label for="addressInput">Заполните Адресс</label>
+                    <input id="addressInput" class="address-input" type="text" placeholder="Введите адресс">
+                </div>
+
+            </div>
+        </div>
+        <div id="comment" class="accordion__item">
+            <h3 class="item__h3" data-id="2">Комментарий</h3>
+            <div class="main-container">
+                <div class="comment__text">
+                    <label for="textarea">Добавте комментарий</label>
+                    <textarea id="textarea" class="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnNext" class="btn-next">далее</button>
+    </div>
+
+
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
