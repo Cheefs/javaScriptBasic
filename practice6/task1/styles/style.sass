@@ -1,0 +1,180 @@
+.main-container
+  display: flex
+  align-items: flex-start
+  justify-content: center
+
+.container
+  padding: 15px 10px
+  width: 770px
+  box-shadow: 2px 2px 2px 2px #ddd
+  display: flex
+  flex-wrap: wrap
+
+  .product
+    position: relative
+    margin: 20px 10px 0 0
+    padding: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: 300px
+    background-color: #e6e7eb
+    transition: 0.5s
+    &:hover .product__button
+      display: block
+    &:hover .product__photo
+      filter: brightness(50%)
+    &:nth-child(-n+3)
+      margin-top: 0
+    &:nth-child(3n)
+      margin-right: 0
+    .product__photo
+      background-color: white
+      width: 230px
+      height: 220px
+      transition: 0.5s
+      .photo
+        text-transform: uppercase
+        text-align: center
+        font-size: 50px
+        height: 100%
+        transform: rotate(-35deg) translate(0, 60px)
+    .product__desc
+      font-weight: bold
+      padding: 10px
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      background-color: white
+      width: 210px
+      height: 50px
+      transition: 0.5s
+      .product_name
+        text-transform: uppercase
+        text-decoration: underline
+        margin-bottom: 10px
+      .product_price
+        font-weight: bold
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        width: 100%
+        .text
+          text-transform: uppercase
+          margin-right: 100px
+        .price
+          font-style: italic
+          color: #fc0056
+    .product__button
+      cursor: pointer
+      transition: 0.2s
+      display: none
+      color: #ae0d0d
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 19px
+      background-color: #ffffff
+      position: absolute
+      border-radius: 2px
+      padding: 5px 15px
+      top: 100px
+      &:hover
+        color: red
+        border: 1px solid
+        border-radius: 2px
+        transform: scale(1.1)
+      &:active
+        filter: invert(100%)
+
+.cart
+  width: 530px
+  height: 700px
+  box-shadow: 2px 2px 2px 2px #ddd
+
+  .cart-header
+    border: 2px solid #ddd
+    border-right: 0
+    text-align: center
+    padding: 5px
+
+  .cart-items
+    padding: 10px
+    height: 580px
+    overflow: auto
+    border-bottom: 2px solid #ddd
+
+    .in-cart-product
+      display: flex
+      padding: 10px
+      height: 100px
+      background-color: #e9e9e9
+
+      .product__photo
+        height: 100%
+        background-color: #ffffff
+        width: 100px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 28px
+
+      .product__desc
+        font-size: 25px
+        margin-left: 15px
+        height: 100%
+        background-color: #ffffff
+        width: 50%
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        .product_price
+          font-style: italic
+          color: #fc0056
+
+      .product_count
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 20%
+        background-color: #fffdff
+        .btn
+          width: 10px
+          transform: rotate(45deg)
+          height: 10px
+          position: absolute
+          cursor: pointer
+          transition: 0.5s
+
+          &.btn_more
+            border-top: 3px solid
+            border-left: 3px solid
+            top: 30px
+
+          &.btn_less
+            @extend .btn
+            border-bottom: 3px solid
+            border-right: 3px solid
+            bottom: 30px
+          &.btn_delete
+            font-weight: bold
+            right: 10px
+            transform: rotate(0) scale(1.2)
+            top: 38px
+            font-size: 20px
+            width: 20px
+            height: 20px
+            text-align: center
+          &:hover
+            color: #fc0056
+
+  .cart-price
+    padding: 22px
+    text-align: center
+    font-weight: bold
+    font-size: 20px
