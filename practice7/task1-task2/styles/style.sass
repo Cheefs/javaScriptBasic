@@ -1,0 +1,166 @@
+*
+  margin: 0
+  padding: 0
+
+.accordion
+  width: 1024px
+  margin: 0 auto
+  height: 100vh
+.item__h3
+  cursor: pointer
+  padding: 10px
+  border: 1px solid white
+  border-radius: 7px
+  color: #fffffff7
+  text-transform: uppercase
+  background-color: #797878
+  font-size: 20px
+  text-align: center
+
+
+.main-container
+  height: 0
+  overflow: hidden
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  background-color: #e8e8e8
+  transition: 2s
+
+  &.expand
+    height: 600px
+
+.btn-next
+  cursor: pointer
+  margin: 10px auto
+  display: block
+  padding: 10px 25px
+  border-radius: 2px
+  text-transform: uppercase
+  font-size: 18px
+  font-weight: bold
+  border: navajowhite
+  color: white
+  background-color: #F44336
+  transition: 0.5s
+  &:hover
+    filter: invert(100%)
+.cart
+  width: 100%
+
+  .cart-header
+    border: 2px solid #ddd
+    border-right: 0
+    text-align: center
+    padding: 5px
+
+  .cart-items
+    padding: 10px
+    height: 510px
+    overflow: auto
+
+    .in-cart-product
+      display: flex
+      padding: 10px
+      height: 100px
+      background-color: #e9e9e9
+
+      .product__photo
+        height: 100%
+        background-color: #ffffff
+        width: 100px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 28px
+
+      .product__desc
+        font-size: 25px
+        margin-left: 15px
+        height: 100%
+        background-color: #ffffff
+        width: 78%
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        .product_price
+          font-style: italic
+          color: #fc0056
+
+      .product_count
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 10%
+        background-color: #fffdff
+        .btn
+          width: 10px
+          transform: rotate(45deg)
+          height: 10px
+          position: absolute
+          cursor: pointer
+          transition: 0.5s
+
+          &.btn_more
+            border-top: 3px solid
+            border-left: 3px solid
+            top: 30px
+
+          &.btn_less
+            @extend .btn
+            border-bottom: 3px solid
+            border-right: 3px solid
+            bottom: 30px
+          &.btn_delete
+            font-weight: bold
+            right: 10px
+            transform: rotate(0) scale(1.2)
+            top: 38px
+            font-size: 20px
+            width: 20px
+            height: 20px
+            text-align: center
+          &:hover
+            color: #fc0056
+
+  .cart-price
+    border: 1px solid #a3a3a3
+    background-color: #e4e4e4
+    border-radius: 3px
+    padding: 22px
+    text-align: center
+    font-weight: bold
+    font-size: 20px
+.comment__text
+  display: flex
+  flex-direction: column
+  width: 100%
+  text-align: center
+  font-size: 16px
+.delivery__container
+  margin: 20px 0
+  width: 100%
+  display: flex
+  align-items: center
+  flex-direction: column
+  justify-content: space-around
+.address-input
+  padding: 10px
+  width: 50%
+  text-align: center
+  border: 1px solid #ddd
+  margin-bottom: 20px
+.select-town
+  @extend .address-input
+  width: 52%
+  padding: 10px
+
+.textarea
+  margin-bottom: 10px
+  border-color: #ddd
+  height: 100px
+  padding: 10px
